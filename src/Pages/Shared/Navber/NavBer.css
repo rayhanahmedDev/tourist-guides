@@ -1,0 +1,6 @@
+ul a.active{
+    background: var(--Linear, linear-gradient(270deg, #F00 0%, #FF8938 100%));
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
