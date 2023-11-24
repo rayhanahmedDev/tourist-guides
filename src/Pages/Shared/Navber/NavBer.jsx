@@ -7,10 +7,10 @@ const NavBer = () => {
 
     const links = <>
     <li><NavLink className='mr-4' to='/'>Home</NavLink></li>
-    <li><NavLink className='mr-4' to='/addproduct'> Add Product</NavLink></li>
-    <li><NavLink className='mr-4' to='/mycart'>My Cart</NavLink></li>
-    <li><NavLink className='mr-4' to='/register'>Register</NavLink></li>
-    
+    <li><NavLink className='mr-4' to='/community'>Community</NavLink></li>
+    <li><NavLink className='mr-4' to='/blogs'>Blogs</NavLink></li>
+    <li><NavLink className='mr-4' to='/about'>About Us</NavLink></li>
+    <li><NavLink className='mr-4' to='/content'>Content</NavLink></li>
     </>
 
     return (
