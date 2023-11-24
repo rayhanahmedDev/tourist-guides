@@ -1,6 +1,7 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Overview from '../../../Component/Overview';
+import OurPackages from '../../../Component/OurPackages';
 
 const Tourism = () => {
     return (
@@ -19,7 +20,7 @@ const Tourism = () => {
                         <Overview></Overview>
                     </TabPanel>
                     <TabPanel>
-                        <h2>World</h2>
+                       <OurPackages></OurPackages>
                     </TabPanel>
                     <TabPanel>
                         <h2>I Am Here</h2>
