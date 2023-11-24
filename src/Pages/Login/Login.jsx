@@ -7,8 +7,9 @@ import Swal from "sweetalert2";
 const Login = () => {
 
     const {googleLogin, signIn} = useAuth()
-    const navigate = useNavigate()
+    
     const location = useLocation()
+    const navigate = useNavigate()
 
     const from = location.state?.from?.pathname || "/";
 
@@ -33,6 +34,12 @@ const Login = () => {
         googleLogin()
         .then(result => {
             console.log(result.user);
+            Swal.fire({
+                title: "Login Successful",
+                text: "You clicked the button!",
+                icon: "success"
+            });
+            navigate(from, { replace: true });
         })
         .catch(error => {
             console.log(error);
@@ -41,7 +48,7 @@ const Login = () => {
     return (
         <div>
             <div className='flex justify-center items-center min-h-screen'>
-                <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
+                <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-white text-gray-900 border'>
                     <div className='mb-8 text-center'>
                         <h1 className='my-3 text-4xl font-bold'>Sign In</h1>
                         <p className='text-sm text-gray-400'>
@@ -64,7 +71,7 @@ const Login = () => {
                                     id='email'
                                     required
                                     placeholder='Enter Your Email Here'
-                                    className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900'
+                                    className='w-full px-3 py-2 rounded-md border focus:outline-[#FF00D3]'
                                     data-temp-mail-org='0'
                                 />
                             </div>
@@ -82,7 +89,7 @@ const Login = () => {
                                     id='password'
                                     required
                                     placeholder='*******'
-                                    className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900'
+                                    className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#FF00D3]'
                                 />
                             </div>
                         </div>
@@ -90,7 +97,7 @@ const Login = () => {
                         <div>
                             <button
                                 type='submit'
-                                className='bg-[#F63E7B] btn w-full rounded-md py-3 text-white'
+                                className='btn btn-secondary w-full rounded-md py-3 text-white'
                             >
                                 Continue
                             </button>

@@ -3,7 +3,13 @@ import useAuth from "../../../Hooks/useAuth";
 
 const NavBer = () => {
 
-    const {user} = useAuth()
+    const {user,logOut} = useAuth()
+
+    const handleLogOut = ()=>{
+        logOut()
+        .then()
+        .catch()
+    }
 
     const links = <>
     <li><NavLink className='mr-4' to='/'>Home</NavLink></li>
@@ -45,7 +51,7 @@ const NavBer = () => {
                          <button className="btn btn-sm my-2 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">{user.displayName}</button>
                          </li>
                          <li>
-                             <button className="btn btn-sm bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">Logout</button>
+                             <button onClick={handleLogOut} className="btn btn-sm bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">Logout</button>
 
                          </li>
                      </ul>
