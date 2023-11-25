@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import errorImg from '../../assets/error.jpg'
+import ButtonTitle from '../../Component/ButtonTitle';
 
 const Error = () => {
     return (
@@ -9,7 +10,7 @@ const Error = () => {
             
         </div>
         <div className='text-center'>
-        <Link to='/'><button className='btn'>Go To Home</button></Link>
+        <Link to='/'><ButtonTitle buttonStyle='Go To Home'></ButtonTitle></Link>
         </div>
        </div>
     );

@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Sara Rahman",
+    "img": "https://i.ibb.co/XC4NFD8/Rahman-author-pic.jpg",
+    "contactDetails": "+8801XXXXXXXXX",
+    "education": "Bachelor's in Tourism Management",
+    "skills": ["Multilingual", "Historical Knowledge", "Adventure Planning"],
+    "workExperience": "5 years as a certified tour guide"
+  },
+  {
+    "name": "Rahim Ahmed",
+    "img": "https://i.ibb.co/my6f287/rahim.jpg",
+    "contactDetails": "+8801XXXXXXXXX",
+    "education": "Master's in Cultural Studies",
+    "skills": ["Cultural Expertise", "Photography", "Storytelling"],
+    "workExperience": "8 years specializing in cultural heritage tours"
+  },
+  {
+    "name": "Ayesha Khan",
+    "img": "https://i.ibb.co/DWTdYFz/aysha.webp",
+    "contactDetails": "+8801XXXXXXXXX",
+    "education": "Diploma in Eco-Tourism",
+    "skills": ["Eco-Friendly Tourism", "Bird Watching", "Nature Conservation"],
+    "workExperience": "6 years promoting sustainable tourism"
+  },
+  {
+    "name": "Mizanur Rahman",
+    "img": "https://i.ibb.co/Mhx9Qww/mizanur6.jpg",
+    "contactDetails": "+8801XXXXXXXXX",
+    "education": "Bachelor's in History",
+    "skills": ["Archaeological Insights", "Adventure Sports", "Local Cuisine"],
+    "workExperience": "7 years specializing in historical and adventure tours"
+  }
+]

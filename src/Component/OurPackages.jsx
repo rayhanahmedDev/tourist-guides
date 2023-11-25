@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import OurPackCard from "./OurPackCard";
+import ButtonTitle from "./ButtonTitle";
+import { Link } from "react-router-dom";
 
 const OurPackages = () => {
 
@@ -17,6 +19,9 @@ const OurPackages = () => {
             {
                 packages.map(data => <OurPackCard key={data._id} data={data}></OurPackCard>)
             }
+        </div>
+        <div className="text-center my-8">
+          <Link to='/allpackage'><ButtonTitle buttonStyle='All Packages'></ButtonTitle></Link>
         </div>
       </div>
     );

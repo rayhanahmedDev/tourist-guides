@@ -7,6 +7,7 @@ import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import Dashboard from "../LayOuts/Dashboard";
+import AllPackages from "../Pages/AllPackages/AllPackages";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
             {
                 path:'signup',
                 element : <SignUp></SignUp>
+            },
+            {
+                path : 'allpackage',
+                element:<AllPackages></AllPackages>,
+                loader : () => fetch('http://localhost:5000/packages')
             }
         ]
     },
