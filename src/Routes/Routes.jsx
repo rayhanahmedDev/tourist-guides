@@ -8,6 +8,7 @@ import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import Dashboard from "../LayOuts/Dashboard";
 import AllPackages from "../Pages/AllPackages/AllPackages";
+import GuideDetails from "../Pages/GuideDetails/GuideDetails";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
                 path : 'allpackage',
                 element:<AllPackages></AllPackages>,
                 loader : () => fetch('http://localhost:5000/packages')
+            },
+            {
+                path : 'details/:id',
+                element : <GuideDetails></GuideDetails>,
+                loader : ({params}) => fetch(`http://localhost:5000/guides/${params.id}`)
             }
         ]
     },

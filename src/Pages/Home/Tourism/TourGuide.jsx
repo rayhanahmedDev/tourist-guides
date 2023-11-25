@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import ButtonTitle from "../../../Component/ButtonTitle";
+import { Link } from "react-router-dom";
 
 const TourGuide = () => {
     const { data: guides = [] } = useQuery({
@@ -41,7 +42,7 @@ const TourGuide = () => {
                                     <h2 className="text-[16px]">{guide.name}</h2>
                                 </td>
                                 <th>
-                                    <ButtonTitle buttonStyle='Details'></ButtonTitle>
+                                    <Link to={`details/${guide._id}`}><ButtonTitle buttonStyle='Details'></ButtonTitle></Link>
                                 </th>
                             </tr>)
                         }
