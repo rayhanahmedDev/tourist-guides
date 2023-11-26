@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { FaTrash } from "react-icons/fa";
+import { FaEye, FaTrash, } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 
@@ -54,7 +54,7 @@ const MyWishlist = () => {
                             <th>
                              Picture
                             </th>
-                            <th>Email</th>
+                            <th>TourType</th>
                             <th>price</th>
                             <th>Action</th>
                             <th>Action</th>
@@ -66,20 +66,20 @@ const MyWishlist = () => {
                                 <td>
                                     <div className="flex items-center gap-3">
                                         <div className="avatar">
-                                            <div className="mask w-24 h-24">
+                                            <div className="mask w-16 h-16">
                                                 <img src={wish.img} alt="Avatar Tailwind CSS Component" />
                                             </div>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <h2 className="text-[16px]">{wish.email}</h2>
+                                    <h2 className="text-[16px]">{wish.tourType}</h2>
                                 </td>
                                 <td>
                                     <p className="text-[16px]">${wish.price}</p>
                                 </td>
                                 <th>
-                                    <button>Visit Details</button>
+                                    <button><FaEye className="text-xl text-[#FF8938]"></FaEye></button>
                                 </th>
                                 <th>
                                     <button onClick={() => handleDeleteItem(wish)} className="text-xl "><FaTrash className="text-[#F00]"></FaTrash></button>

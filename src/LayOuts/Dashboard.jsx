@@ -20,7 +20,7 @@ const Dashboard = () => {
                         </>
 
                         {/* shared links */}
-                        <div className="divider divider-horizontal">--</div>
+                        <div className="divider"></div> 
                         <li>
                             <NavLink to='/'><FaHome></FaHome>Home</NavLink>
                         </li>
