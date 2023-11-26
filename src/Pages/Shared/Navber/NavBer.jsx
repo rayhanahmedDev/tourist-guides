@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import './NavBer.css'
+import ButtonTitle from "../../../Component/ButtonTitle";
 
 const NavBer = () => {
 
@@ -63,7 +64,7 @@ const NavBer = () => {
                             </ul>
                         </div>
                         :
-                        <Link to='/login'><button className="btn btn-outline btn-secondary">Login</button></Link>
+                        <Link to='/login'><ButtonTitle buttonStyle="Login"></ButtonTitle></Link>
                     }
                 </div>
             </div>

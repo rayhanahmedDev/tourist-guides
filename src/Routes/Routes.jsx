@@ -9,6 +9,8 @@ import SignUp from "../Pages/SignUp/SignUp";
 import Dashboard from "../LayOuts/Dashboard";
 import AllPackages from "../Pages/AllPackages/AllPackages";
 import GuideDetails from "../Pages/GuideDetails/GuideDetails";
+import PrivateRoute from "../Provider/PrivateRoute";
+import TourTypePackage from "../Pages/TourTypePackage/TourTypePackage";
 
 const router = createBrowserRouter([
     {
@@ -35,8 +37,13 @@ const router = createBrowserRouter([
             },
             {
                 path : 'details/:id',
-                element : <GuideDetails></GuideDetails>,
+                element : <PrivateRoute><GuideDetails></GuideDetails></PrivateRoute>,
                 loader : ({params}) => fetch(`http://localhost:5000/guides/${params.id}`)
+            },
+            {
+                path: 'tourPackages/:tourType',
+                element : <TourTypePackage></TourTypePackage>,
+                loader : ({params}) => fetch(`http://localhost:5000/tourTypes/${params.tourType}`)
             }
         ]
     },

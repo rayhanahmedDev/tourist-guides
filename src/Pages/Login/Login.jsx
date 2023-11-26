@@ -71,7 +71,7 @@ const Login = () => {
                                     id='email'
                                     required
                                     placeholder='Enter Your Email Here'
-                                    className='w-full px-3 py-2 rounded-md border focus:outline-[#FF00D3]'
+                                    className='w-full px-3 py-2 rounded-md border-2 border-[#FF3811] focus:outline-[#FF3811]'
                                     data-temp-mail-org='0'
                                 />
                             </div>
@@ -89,7 +89,7 @@ const Login = () => {
                                     id='password'
                                     required
                                     placeholder='*******'
-                                    className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#FF00D3]'
+                                    className='w-full px-3 py-2 border-2 border-[#FF3811] rounded-md focus:outline-[#FF3811]'
                                 />
                             </div>
                         </div>
@@ -97,7 +97,7 @@ const Login = () => {
                         <div>
                             <button
                                 type='submit'
-                                className='btn btn-secondary w-full rounded-md py-3 text-white'
+                                className='btn bg-gradient-to-r from-[#FF8938] to-[#F00] border-[#FF3811] w-full rounded-md py-3 text-white'
                             >
                                 Continue
                             </button>
@@ -115,7 +115,7 @@ const Login = () => {
                         </p>
                         <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
                     </div>
-                    <div onClick={handleGoogle} className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'>
+                    <div onClick={handleGoogle} className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer btn'>
                         <FcGoogle size={32} />
                         <p>Continue with Google</p>
                     </div>

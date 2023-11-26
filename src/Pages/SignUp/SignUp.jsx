@@ -67,7 +67,7 @@ const SignUp = () => {
                                     required
                                     {...register("name", { required: true })}
                                     placeholder='Enter Your Name Here'
-                                    className='w-full px-3 py-2 border rounded-md focus:outline-[#FF00D3]'
+                                    className='w-full px-3 py-2 border-2 border-[#FF3811] rounded-md focus:outline-[#FF3811]'
                                     data-temp-mail-org='0'
                                 />
                             </div>
@@ -82,7 +82,7 @@ const SignUp = () => {
                                     id='email'
                                     required
                                     placeholder='Enter Your Email Here'
-                                    className='w-full px-3 py-2 border rounded-md focus:outline-[#FF00D3]'
+                                    className='w-full px-3 py-2 border-2 border-[#FF3811] rounded-md focus:outline-[#FF3811]'
                                     data-temp-mail-org='0'
                                 />
                             </div>
@@ -100,7 +100,7 @@ const SignUp = () => {
                                     id='password'
                                     required
                                     placeholder='*******'
-                                    className='w-full px-3 py-2 border rounded-md focus:outline-[#FF00D3]'
+                                    className='w-full px-3 py-2 border-2 border-[#FF3811] rounded-md focus:outline-[#FF3811]'
                                 />
                             </div>
                         </div>
@@ -108,7 +108,7 @@ const SignUp = () => {
                         <div>
                             <button
                                 type='submit'
-                                className='btn w-full btn-secondary rounded-md py-3 text-white'
+                                className='btn w-full bg-gradient-to-r from-[#FF8938] to-[#F00] border-[#FF3811] rounded-md py-3 text-white'
                             >
                                 Continue
                             </button>
