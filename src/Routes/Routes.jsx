@@ -11,6 +11,8 @@ import AllPackages from "../Pages/AllPackages/AllPackages";
 import GuideDetails from "../Pages/GuideDetails/GuideDetails";
 import PrivateRoute from "../Provider/PrivateRoute";
 import TourTypePackage from "../Pages/TourTypePackage/TourTypePackage";
+import StoryDetails from "../Pages/StoryDetails/StoryDetails";
+import AllStories from "../Pages/AllStories/AllStories";
 
 const router = createBrowserRouter([
     {
@@ -44,6 +46,16 @@ const router = createBrowserRouter([
                 path: 'tourPackages/:tourType',
                 element : <TourTypePackage></TourTypePackage>,
                 loader : ({params}) => fetch(`http://localhost:5000/tourTypes/${params.tourType}`)
+            },
+            {
+                path : 'storyDetails/:id',
+                element : <PrivateRoute><StoryDetails></StoryDetails></PrivateRoute>,
+                loader : ({params}) => fetch(`http://localhost:5000/touristStory/${params.id}`)
+            },
+            {
+                path : 'allStories',
+                element : <AllStories></AllStories>,
+                loader : () => fetch('http://localhost:5000/touristStory')
             }
         ]
     },

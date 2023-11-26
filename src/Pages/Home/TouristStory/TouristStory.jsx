@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import TouristStoryCard from "../../../Component/TouristStoryCard";
+import ButtonTitle from "../../../Component/ButtonTitle";
+import { Link } from "react-router-dom";
 
 
 const TouristStory = () => {
@@ -7,9 +9,9 @@ const TouristStory = () => {
 
     useEffect(() => {
         fetch('http://localhost:5000/touristStory')
-        .then(res => res.json())
-        .then(data => setStory(data))
-    },[])
+            .then(res => res.json())
+            .then(data => setStory(data))
+    }, [])
     return (
         <div className="lg:h-[80vh] ">
             <dir>
@@ -18,8 +20,11 @@ const TouristStory = () => {
             </dir>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 my-12">
                 {
-                    story.map(stories =><TouristStoryCard key={stories._id} stories={stories}></TouristStoryCard>)
+                    story.map(stories => <TouristStoryCard key={stories._id} stories={stories}></TouristStoryCard>)
                 }
+            </div>
+            <div className="text-center">
+                <Link to='/allStories'><ButtonTitle buttonStyle='All Stories'></ButtonTitle></Link>
             </div>
         </div>
     );
