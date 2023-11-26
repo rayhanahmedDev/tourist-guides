@@ -13,6 +13,7 @@ import PrivateRoute from "../Provider/PrivateRoute";
 import TourTypePackage from "../Pages/TourTypePackage/TourTypePackage";
 import StoryDetails from "../Pages/StoryDetails/StoryDetails";
 import AllStories from "../Pages/AllStories/AllStories";
+import MyWishlist from "../Pages/Dashboard/MyWishlist/MyWishlist";
 
 const router = createBrowserRouter([
     {
@@ -61,7 +62,13 @@ const router = createBrowserRouter([
     },
     {
         path:'dashboard',
-        element:<Dashboard></Dashboard>
+        element:<Dashboard></Dashboard>,
+        children : [
+            {
+                path : 'wishlist',
+                element : <MyWishlist></MyWishlist>
+            }
+        ]
     }
 ]);
 

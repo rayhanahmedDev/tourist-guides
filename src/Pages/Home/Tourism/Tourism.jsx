@@ -6,7 +6,7 @@ import TourGuide from './TourGuide';
 
 const Tourism = () => {
     return (
-        <div className="my-16 lg:h-[90vh]">
+        <div className="my-16">
             <div>
                 <h2 className="text-4xl font-bold text-center">Tourism and Travel Guide</h2>
             </div>
