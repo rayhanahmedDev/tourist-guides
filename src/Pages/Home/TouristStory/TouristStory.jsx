@@ -13,7 +13,7 @@ const TouristStory = () => {
             .then(data => setStory(data))
     }, [])
     return (
-        <div className="lg:h-[80vh] ">
+        <div className="lg:h-[80vh]">
             <dir>
                 <h2 className="text-4xl font-bold text-center">Tourist Story</h2>
                 <p className="lowercase text-center mt-3 px-4">INSPIRING TRAVEL EXPERIENCE STORIES ABOUT LIFE-CHANGING TRIPS</p>
