@@ -10,7 +10,7 @@ const TourType = () => {
         .then(data => setTourData(data))
     },[])
     return (
-        <div className="lg:h-[50vh] max-w-4xl mx-auto">
+        <div className="lg:h-[50vh] max-w-4xl mx-auto my-16">
             <div>
                <h2 className="text-4xl font-bold text-center">Tour Type</h2>
                <p className="text-center mt-3">Find What Package You Want</p>
