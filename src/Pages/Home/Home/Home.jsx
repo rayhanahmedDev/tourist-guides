@@ -1,5 +1,6 @@
 import NavBer from "../../Shared/Navber/NavBer";
 import Banner from "../Banner/Banner";
+import Footer from "../Footer/Footer";
 import TourType from "../TourType/TourType";
 import Tourism from "../Tourism/Tourism";
 import TouristStory from "../TouristStory/TouristStory";
@@ -20,6 +21,7 @@ const Home = () => {
             </div>
             <div className="lg:max-w-[1400px] mx-auto">
                 <TouristStory></TouristStory>
+                <Footer></Footer>
             </div>
         </div>
     );
