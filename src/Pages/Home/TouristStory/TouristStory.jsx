@@ -13,7 +13,7 @@ const TouristStory = () => {
             .then(data => setStory(data))
     }, [])
     return (
-        <div className="lg:h-[80vh]">
+        <div className="">
             <dir>
                 <h2 className="text-4xl font-bold text-center">Tourist Story</h2>
                 <p className="lowercase text-center mt-3 px-4">INSPIRING TRAVEL EXPERIENCE STORIES ABOUT LIFE-CHANGING TRIPS</p>
@@ -23,7 +23,7 @@ const TouristStory = () => {
                     story.map(stories => <TouristStoryCard key={stories._id} stories={stories}></TouristStoryCard>)
                 }
             </div>
-            <div className="text-center">
+            <div className="text-center mb-12">
                 <Link to='/allStories'><ButtonTitle buttonStyle='All Stories'></ButtonTitle></Link>
             </div>
         </div>

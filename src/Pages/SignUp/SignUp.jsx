@@ -3,27 +3,49 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm, } from "react-hook-form"
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 
 const SignUp = () => {
 
-    const { googleLogin, createUser } = useAuth()
+    const { googleLogin, createUser, userProfile } = useAuth()
     const navigate = useNavigate()
+    const axiosPublic = useAxiosPublic()
 
     const {
         register,
         handleSubmit,
+        reset
     } = useForm()
     const onSubmit = (data) => {
         createUser(data.email, data.password)
             .then(result => {
                 console.log(result.user);
-                Swal.fire({
-                    title: "Sign up Successful",
-                    text: "You clicked the button!",
-                    icon: "success"
-                });
-                navigate('/login')
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                userProfile(data.name, data.photoURL)
+                .then(() => {
+                    const userInfo = {
+                        name: data.name,
+                        email: data.email
+                    }
+                    axiosPublic.post('/signUpUser', userInfo)
+                        .then(res => {
+                            if (res.data.insertedId) {
+                                reset()
+                                Swal.fire({
+                                    title: "Sign Up Successful",
+                                    text: "You clicked the button!",
+                                    icon: "success"
+                                });
+                                navigate('/login')
+                            }
+                        })
+
+                })
+                .catch(error => {
+                    console.log(error);
+                })
             })
     }
 

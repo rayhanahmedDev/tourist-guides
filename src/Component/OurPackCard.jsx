@@ -4,6 +4,7 @@ import './OurPackage.css'
 import useAuth from "../Hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const OurPackCard = ({data}) => {
     const { img, tourType, tripTitle, price } = data;
@@ -48,7 +49,7 @@ const OurPackCard = ({data}) => {
                   <h2 className="card-title">{tripTitle}</h2>
                   <p>Price : ${price}</p>
                   <div className="card-actions justify-end">
-                    <ButtonTitle buttonStyle='View Package'></ButtonTitle>
+                    <Link to={`/viewPackage/${tourType}`}><ButtonTitle buttonStyle='View Package'></ButtonTitle></Link>
                   </div>
                 </div>
               </div>
