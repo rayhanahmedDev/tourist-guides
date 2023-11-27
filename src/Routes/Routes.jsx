@@ -14,6 +14,7 @@ import TourTypePackage from "../Pages/TourTypePackage/TourTypePackage";
 import StoryDetails from "../Pages/StoryDetails/StoryDetails";
 import AllStories from "../Pages/AllStories/AllStories";
 import MyWishlist from "../Pages/Dashboard/MyWishlist/MyWishlist";
+import MyHome from "../Pages/Dashboard/MyHome/MyHome";
 
 const router = createBrowserRouter([
     {
@@ -67,7 +68,11 @@ const router = createBrowserRouter([
             {
                 path : 'wishlist',
                 element : <MyWishlist></MyWishlist>
-            }
+            },
+            {
+                path : 'myHome',
+                element : <MyHome></MyHome>
+            },
         ]
     }
 ]);

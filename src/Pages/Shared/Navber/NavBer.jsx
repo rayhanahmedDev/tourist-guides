@@ -50,7 +50,7 @@ const NavBer = () => {
                             </label>
                             <ul tabIndex={0} className="menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                                 <li>
-                                    <h2 className="my-2 flex justify-center bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">{user.displayName}</h2>
+                                    <h2 className="my-2 flex justify-center bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">{user?.displayName}</h2>
                                 </li>
                                 <li>
                                     <h2 className="my-2 text-center bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">{user.email}</h2>

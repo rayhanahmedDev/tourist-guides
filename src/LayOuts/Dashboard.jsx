@@ -9,7 +9,7 @@ const Dashboard = () => {
                     <ul className="menu">
                         <>
                             <li>
-                                <NavLink to='/dashboard/userHome'><FaHome></FaHome> User Home</NavLink>
+                                <NavLink to='/dashboard/myHome'><FaHome></FaHome> My Home</NavLink>
                             </li>
                             <li>
                                 <NavLink to='/dashboard/bookings'><FaBook></FaBook>My Bookings</NavLink>
