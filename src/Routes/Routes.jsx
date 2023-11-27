@@ -67,11 +67,11 @@ const router = createBrowserRouter([
         children : [
             {
                 path : 'wishlist',
-                element : <MyWishlist></MyWishlist>
+                element : <PrivateRoute><MyWishlist></MyWishlist></PrivateRoute>
             },
             {
                 path : 'myHome',
-                element : <MyHome></MyHome>
+                element : <PrivateRoute><MyHome></MyHome></PrivateRoute>
             },
         ]
     }

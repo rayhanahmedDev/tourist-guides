@@ -7,11 +7,8 @@ const MyHome = () => {
         <div>
             <div className='flex justify-center items-center md:h-[80vh]'>
                 <div className='bg-white shadow-lg rounded-2xl w-full md:w-3/5'>
-                    <img
-                        alt='profile'
-                        src='https://wallpapercave.com/wp/wp10784415.jpg'
-                        className='w-full mb-4 rounded-t-lg h-36'
-                    />
+                    <div   className='w-full mb-4 rounded-t-lg h-36 bg-gradient-to-r from-[#FF00001A] to-[#FF89381A]'>
+                    </div>
                     <div className='flex flex-col items-center justify-center p-4 -mt-16'>
                         <a href='#' className='relative block'>
                             <img

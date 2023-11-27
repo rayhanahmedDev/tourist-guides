@@ -2,14 +2,19 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { FaEye, FaTrash, } from "react-icons/fa";
 import Swal from "sweetalert2";
+import useAuth from "../../../Hooks/useAuth";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 
 const MyWishlist = () => {
 
+    const {user} = useAuth()
+    const axiosSecure = useAxiosSecure()
+
     const { data: wishlist = [], refetch } = useQuery({
         queryKey: ['wishlist'],
         queryFn: async () => {
-            const res = await axios.get('http://localhost:5000/users')
+            const res = await axiosSecure.get(`http://localhost:5000/users?email=${user.email}`)
             return res.data
         }
     })
