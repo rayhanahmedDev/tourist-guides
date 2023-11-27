@@ -37,7 +37,7 @@ const TourTypeCard = ({tourCard}) => {
     }
     return (
         <div>
-            <div className="card mx-8 lg:mx-0 bg-base-100 shadow-xl">
+            <div className="card mx-8 lg:mx-0 bg-base-100 shadow-xl cursor-pointer">
                 <div className="container hover:bg-black">
                 <figure><img className="h-[230px] image w-full" src={img} alt="Shoes" /></figure>
                 <div className="middle">

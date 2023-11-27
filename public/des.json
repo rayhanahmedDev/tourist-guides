@@ -1,0 +1,21 @@
+[
+    {
+        "id": 1,
+        "tourType": "Tea Garden Exploration",
+        "des": "Savor the tranquility of our Tea Garden Exploration, a journey through the picturesque tea plantations of Bangladesh. Wander amidst rolling hills adorned with vibrant greenery, inhale the aroma of fresh tea leaves, and delve into the cultural richness of Sylhet and Srimangal. This tour is a sensory delight, offering a peaceful escape into the heart of Bangladesh's tea country."
+    },
+    {
+        "id": 2,
+        "tourType": "Historic Mosque Trail",
+        "des": "Embark on a journey through time with our Historic Mosque Trail. Explore the architectural wonders of Bangladesh's historic mosques, each narrating tales of cultural richness and medieval grandeur. Uncover the intricate details, marvel at the timeless beauty, and immerse yourself in the spiritual and historical significance of these UNESCO Heritage Sites."
+    },
+    {
+        "tourType": "Beach Hopping Tour",
+        "des": "Indulge in the serenity of our Beach Hopping Tour, where sun-kissed sands meet crystal-clear waters. Immerse yourself in the rhythmic waves, witness breathtaking sunsets, and explore the diverse coastal beauty of Bangladesh. Each beach has its unique charm, promising a rejuvenating escape for beach enthusiasts."
+    },
+    {
+        "id": 4,
+        "tourType": "Hill Tracts Adventure",
+        "des": "For those seeking an adrenaline rush and stunning landscapes, our Hill Tracts Adventure awaits. Trek through the lush Chittagong Hill Tracts, conquer lofty peaks, and immerse yourself in the vibrant indigenous culture. This adventure promises breathtaking views, cultural encounters, and an unforgettable exploration of Bangladesh's scenic hill regions."
+    }
+]

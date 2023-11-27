@@ -37,7 +37,7 @@ const OurPackCard = ({data}) => {
 
     return (
         <div>
-            <div className="card bg-base-100 shadow-xl">
+            <div className="card bg-base-100 shadow-xl cursor-pointer">
                 <div className="container hover:bg-black">
                 <figure><img className="h-[230px] image w-full" src={img} alt="Shoes" /></figure>
                 <div className="middle">

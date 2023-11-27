@@ -8,36 +8,36 @@ import { Link } from "react-router-dom";
 
 const AllPackage = ({ dataLoad }) => {
     const { img, tourType, tripTitle, price } = dataLoad;
-    const {user} = useAuth()
+    const { user } = useAuth()
 
     const handlePackage = () => {
-        if(user && user.email){
+        if (user && user.email) {
             const packageItem = {
-                email : user.email,
+                email: user.email,
                 img,
                 tourType,
                 tripTitle,
                 price
             }
             axios.post('http://localhost:5000/users', packageItem)
-            .then(res => {
-                console.log(res.data);
-                if(res.data.insertedId){
-                    Swal.fire({
-                        position: "top-end",
-                        icon: "success",
-                        title: `${tripTitle} to added your wishlist`,
-                        showConfirmButton: false,
-                        timer: 1500
-                      });
-                }
-            })
+                .then(res => {
+                    console.log(res.data);
+                    if (res.data.insertedId) {
+                        Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: `${tripTitle} to added your wishlist`,
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    }
+                })
         }
     }
 
     return (
         <div>
-            <div key={dataLoad._id} className="card bg-base-100 shadow-xl">
+            <div key={dataLoad._id} className="card bg-base-100 shadow-xl cursor-pointer">
                 <div className="container hover:bg-black">
                     <figure><img className="h-[230px] image w-full" src={img} alt="Shoes" /></figure>
                     <div className="middle">
