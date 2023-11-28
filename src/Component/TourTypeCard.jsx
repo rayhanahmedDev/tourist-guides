@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 
 const TourTypeCard = ({tourCard}) => {
-    const {_id, img, tourType, tripTitle, price} = tourCard;
+    const {img, tourType, tripTitle, price} = tourCard;
     const {user} = useAuth()
 
 
@@ -49,7 +49,7 @@ const TourTypeCard = ({tourCard}) => {
                   <h2 className="card-title">{tripTitle}</h2>
                   <p>Price : ${price}</p>
                   <div className="card-actions justify-end">
-                    <Link to={`/viewPackage/${_id}`}><ButtonTitle buttonStyle='View Package'></ButtonTitle></Link>
+                    <Link to={`/viewPackage/${tourType}`}><ButtonTitle buttonStyle='View Package'></ButtonTitle></Link>
                   </div>
                 </div>
               </div>

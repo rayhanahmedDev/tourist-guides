@@ -25,7 +25,7 @@ const BookedNow = () => {
             const menuItem = {
                 name: data.name,
                 email: data.email,
-                category: data.category,
+                guideName: data.guideName,
                 price: parseFloat(data.price),
                 date: data.date,
                 image: res.data.data.display_url
@@ -35,12 +35,11 @@ const BookedNow = () => {
             if (menuRes.data.insertedId) {
                 reset()
                 Swal.fire({
-                    position: "top-end",
+                    title: "Confirm your Booking",
+                    text: "You clicked the button!",
                     icon: "success",
-                    title: `${data.name} added to the menu`,
-                    showConfirmButton: false,
-                    timer: 1500
-                });
+                    footer: `<a href="/">Home</a>`
+                  });
             }
         }
         console.log('image url', res.data);
@@ -76,12 +75,12 @@ const BookedNow = () => {
                             <label className="label">
                                 <span className="label-text">Tour guide name</span>
                             </label>
-                            <select defaultValue='default' {...register("category", { required: true })} className="select select-bordered w-full">
+                            <select defaultValue='default' {...register("guideName", { required: true })} className="select select-bordered w-full">
                                 <option disabled value='default'>Tour guide name</option>
-                                <option value="Beach Hopping Tour">Beach Hopping Tour</option>
-                                <option value="Hill Tracts Adventure">Hill Tracts Adventure</option>
-                                <option value="Historic Mosque Trail">Historic Mosque Trail</option>
-                                <option value="Tea Garden Exploration">Tea Garden Exploration</option>
+                                <option value="Mizanur Rahman">Mizanur Rahman</option>
+                                <option value="Sara Rahman">Sara Rahman</option>
+                                <option value="Ayesha Khan">Ayesha Khan</option>
+                                <option value="Rahim Ahmed">Rahim Ahmed</option>
                             </select>
                         </div>
 
