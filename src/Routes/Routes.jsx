@@ -51,9 +51,9 @@ const router = createBrowserRouter([
                 loader : ({params}) => fetch(`http://localhost:5000/tourTypes/${params.tourType}`)
             },
             {
-                path: 'viewPackage/:tourType',
+                path: 'viewPackage/:id',
                 element : <ViewDetails></ViewDetails>,
-                loader : ({params}) => fetch(`http://localhost:5000/tourTypes/${params.tourType}`)
+                loader : ({params}) => fetch(`http://localhost:5000/tourType/${params.id}`)
             },
             {
                 path : 'storyDetails/:id',
