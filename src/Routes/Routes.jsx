@@ -16,6 +16,7 @@ import AllStories from "../Pages/AllStories/AllStories";
 import MyWishlist from "../Pages/Dashboard/MyWishlist/MyWishlist";
 import MyHome from "../Pages/Dashboard/MyHome/MyHome";
 import ViewDetails from "../Pages/ViewDetails/ViewDetails";
+import MyBookings from "../Pages/Dashboard/MyBookings/MyBookings";
 
 const router = createBrowserRouter([
     {
@@ -51,9 +52,9 @@ const router = createBrowserRouter([
                 loader : ({params}) => fetch(`http://localhost:5000/tourTypes/${params.tourType}`)
             },
             {
-                path: 'viewPackage/:tourType',
+                path: 'viewPackage/:id',
                 element : <ViewDetails></ViewDetails>,
-                loader : ({params}) => fetch(`http://localhost:5000/tourTypes/${params.tourType}`)
+                loader : ({params}) => fetch(`http://localhost:5000/tourType/${params.id}`)
             },
             {
                 path : 'storyDetails/:id',
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
                 path : 'myHome',
                 element : <PrivateRoute><MyHome></MyHome></PrivateRoute>
             },
+            {
+                path : 'bookings',
+                element : <PrivateRoute><MyBookings></MyBookings></PrivateRoute>
+            }
         ]
     }
 ]);

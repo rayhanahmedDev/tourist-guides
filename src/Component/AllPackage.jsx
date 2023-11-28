@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 
 const AllPackage = ({ dataLoad }) => {
-    const { img, tourType, tripTitle, price } = dataLoad;
+    const {_id, img, tourType, tripTitle, price } = dataLoad;
     const { user } = useAuth()
 
     const handlePackage = () => {
@@ -49,7 +49,7 @@ const AllPackage = ({ dataLoad }) => {
                     <h2 className="card-title">{tripTitle}</h2>
                     <p>Price : ${price}</p>
                     <div className="card-actions justify-end">
-                        <Link to={`/viewPackage/${tourType}`}><ButtonTitle buttonStyle='View Package'></ButtonTitle></Link>
+                        <Link to={`/viewPackage/${_id}`}><ButtonTitle buttonStyle='View Package'></ButtonTitle></Link>
                     </div>
                 </div>
             </div>

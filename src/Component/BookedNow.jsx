@@ -3,18 +3,24 @@ import useAxiosPublic from "../Hooks/useAxiosPublic";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import ButtonTitle from "./ButtonTitle";
+import useAuth from "../Hooks/useAuth";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`
-const BookedNow = () => {
+const BookedNow = ({tourType}) => {
     const { register, handleSubmit, reset } = useForm()
     const axiosPublic = useAxiosPublic()
     const axiosSecure = useAxiosSecure()
+    const navigate = useNavigate()
+    const location = useLocation()
+    const {user} = useAuth()
 
     const onSubmit = async (data) => {
         console.log(data)
-        // image upload imgbb
+        if(user && user.email){
+            // image upload imgbb
         const imageFile = { image: data.image[0] }
         const res = await axiosPublic.post(image_hosting_api, imageFile, {
             headers: {
@@ -28,7 +34,8 @@ const BookedNow = () => {
                 guideName: data.guideName,
                 price: parseFloat(data.price),
                 date: data.date,
-                image: res.data.data.display_url
+                image: res.data.data.display_url,
+                tourType:tourType
             }
             const menuRes = await axiosSecure.post('/booking', menuItem)
             console.log(menuRes);
@@ -38,11 +45,26 @@ const BookedNow = () => {
                     title: "Confirm your Booking",
                     text: "You clicked the button!",
                     icon: "success",
-                    footer: `<a href="/">Home</a>`
+                    footer: `<a href="/dashboard/bookings">Go To My Bookings</a>`
                   });
             }
         }
         console.log('image url', res.data);
+        }else{
+            Swal.fire({
+                title: "Please Login",
+                text: "At first login then add to cart",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  navigate('/login',{ state:{from:location}})
+                }
+              });
+        }
     }
 
     return (
