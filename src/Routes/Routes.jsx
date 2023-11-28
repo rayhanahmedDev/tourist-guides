@@ -20,6 +20,7 @@ import MyBookings from "../Pages/Dashboard/MyBookings/MyBookings";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import HostAssigned from "../Pages/Dashboard/HostAssigned/HostAssigned";
 import HostRoute from "../Provider/HostRoute";
+import HostHome from "../Pages/Dashboard/HostHome/HostHome";
 
 const router = createBrowserRouter([
     {
@@ -98,6 +99,10 @@ const router = createBrowserRouter([
             {
                 path : 'assigned',
                 element : <HostRoute><HostAssigned></HostAssigned></HostRoute>
+            },
+            {
+                path: 'myProfile',
+                element :<HostHome></HostHome>
             }
         ]
     }

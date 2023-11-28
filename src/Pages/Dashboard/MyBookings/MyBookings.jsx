@@ -70,7 +70,7 @@ const MyBookings = () => {
                                         <p className="text-[16px]">{book.status}</p>
                                     </td>
                                     <td>
-                                        {book.status === 'in Review' && (
+                                        {book.status === 'in Review' && 'Rejected' (
                                             <button className="btn btn-sm" onClick={() => handleDeleteBooking(book._id)}>Cancel</button>
                                         )}
                                     </td>

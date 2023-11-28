@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 
 const HostAssigned = () => {
@@ -20,13 +21,31 @@ const HostAssigned = () => {
             console.log(res.data);
             if(res.data.modifiedCount > 0){
                 refetch()
-                // Swal.fire({
-                //     position: "top-end",
-                //     icon: "success",
-                //     title: "Your work has been saved",
-                //     showConfirmButton: false,
-                //     timer: 1500
-                //   });
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Status Update Successful",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            }
+        })
+    }
+
+    // status accepted
+    const handleRejected = book => {
+        axiosSecure.patch(`/bookings/host/${book._id}`)
+        .then(res => {
+            console.log(res.data);
+            if(res.data.modifiedCount > 0){
+                refetch()
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Status Update Successful",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
             }
         })
     }
@@ -66,7 +85,7 @@ const HostAssigned = () => {
                                         <button onClick={() => handleAccepted(book)} className="btn btn-sm bg-gradient-to-r from-[#FF8938] to-[#F00] text-white">Accept</button>
                                     </td>
                                     <td>
-                                    <button className="btn btn-sm bg-gradient-to-r from-[#FF8938] to-[#F00] text-white">Reject</button>
+                                    <button onClick={() => handleRejected(book)} className="btn btn-sm bg-gradient-to-r from-[#FF8938] to-[#F00] text-white">Reject</button>
                                     </td>
                                 </tr>)
                             }
