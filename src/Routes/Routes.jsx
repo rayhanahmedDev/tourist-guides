@@ -17,6 +17,9 @@ import MyWishlist from "../Pages/Dashboard/MyWishlist/MyWishlist";
 import MyHome from "../Pages/Dashboard/MyHome/MyHome";
 import ViewDetails from "../Pages/ViewDetails/ViewDetails";
 import MyBookings from "../Pages/Dashboard/MyBookings/MyBookings";
+import Payment from "../Pages/Dashboard/Payment/Payment";
+import HostAssigned from "../Pages/Dashboard/HostAssigned/HostAssigned";
+import HostRoute from "../Provider/HostRoute";
 
 const router = createBrowserRouter([
     {
@@ -72,6 +75,8 @@ const router = createBrowserRouter([
         path:'dashboard',
         element:<Dashboard></Dashboard>,
         children : [
+
+            // user dashboard
             {
                 path : 'wishlist',
                 element : <PrivateRoute><MyWishlist></MyWishlist></PrivateRoute>
@@ -83,6 +88,16 @@ const router = createBrowserRouter([
             {
                 path : 'bookings',
                 element : <PrivateRoute><MyBookings></MyBookings></PrivateRoute>
+            },
+            {
+                path : 'payment',
+                element  : <Payment></Payment>
+            },
+
+            // host dashboard
+            {
+                path : 'assigned',
+                element : <HostRoute><HostAssigned></HostAssigned></HostRoute>
             }
         ]
     }

@@ -35,7 +35,8 @@ const BookedNow = ({tourType}) => {
                 price: parseFloat(data.price),
                 date: data.date,
                 image: res.data.data.display_url,
-                tourType:tourType
+                tourType:tourType,
+                status : 'in Review'
             }
             const menuRes = await axiosSecure.post('/booking', menuItem)
             console.log(menuRes);

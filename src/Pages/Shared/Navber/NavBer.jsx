@@ -55,7 +55,7 @@ const NavBer = () => {
                                 <li>
                                     <h2 className="my-2 text-center bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">{user.email}</h2>
                                 </li>
-                                    <Link to='/dashboard'>
+                                    <Link to='/dashboard/'>
                                         <button className="btn btn-sm mb-2 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white w-full">Dashboard</button>
                                     </Link>
                                 <li>
