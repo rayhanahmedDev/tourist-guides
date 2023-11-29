@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
-import Swal from "sweetalert2";
 
 
 const ManageUsers = () => {
@@ -13,20 +12,24 @@ const ManageUsers = () => {
         }
     })
 
-    // status accepted
+    // change the role from tourist to admin
     const handleMakeAdmin = book => {
         axiosSecure.patch(`/booked/admin/${book._id}`)
             .then(res => {
                 console.log(res.data);
                 if (res.data.modifiedCount > 0) {
                     refetch()
-                    Swal.fire({
-                        position: "top-end",
-                        icon: "success",
-                        title: "Status Update Successful",
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
+                }
+            })
+    }
+
+    // change the role from tourist to host
+    const handleMakeTourGuide = book => {
+        axiosSecure.patch(`/book/admin/${book._id}`)
+            .then(res => {
+                console.log(res.data);
+                if (res.data.modifiedCount > 0) {
+                    refetch()
                 }
             })
     }
@@ -35,7 +38,7 @@ const ManageUsers = () => {
         <div>
             <div>
                 <div className="overflow-x-auto">
-                    <table className="table table-zebra">
+                    <table className="table">
                         {/* head */}
                         <thead>
                             <tr className="uppercase bg-gradient-to-r from-[#FF00001A] to-[#FF89381A]">
@@ -58,7 +61,7 @@ const ManageUsers = () => {
                                     {book?.role === 'admin' ? 'Admin' : <button onClick={() => handleMakeAdmin(book)} className="btn btn-sm bg-gradient-to-r from-[#FF8938] to-[#F00] text-white">Make Admin</button>}
                                 </td>
                                     <td>
-                                    {book?.role === 'host' ? 'Host' : <button onClick={() => handleMakeAdmin(book)} className="btn btn-sm bg-gradient-to-r from-[#FF8938] to-[#F00] text-white">Make Tour Guide</button>}
+                                    {book?.role === 'host' ? 'Host' : <button onClick={() => handleMakeTourGuide(book)} className="btn btn-sm bg-gradient-to-r from-[#FF8938] to-[#F00] text-white">Make Tour Guide</button>}
                                 </td>
                                     </>
                                 </tr>)
