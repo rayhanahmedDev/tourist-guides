@@ -6,14 +6,14 @@ import { useState } from "react";
 
 const GuideDetails = () => {
 
-    const { name, img, contactDetails, education, skills, workExperience } = useLoaderData()
+    const { name, image, contactDetails, education, skills, workExperience } = useLoaderData()
     const [rating, setRating] = useState(4);
     return (
         <div>
             <NavBer></NavBer>
             <div className="lg:w-7/12 lg:mx-auto rounded-lg mt-6 lg:flex justify-between lg:mt-16">
                 <div className="lg:w-1/2 p-5">
-                    <img className="lg:rounded-lg w-64 h-64" src={img} alt="" />
+                    <img className="lg:rounded-lg w-64 h-64" src={image} alt="" />
                     {/* rating section */}
                     <div className="mt-4" style={{ maxWidth: 180, width: '100%' }}>
                         <Rating

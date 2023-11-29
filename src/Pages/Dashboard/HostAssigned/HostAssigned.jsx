@@ -32,7 +32,7 @@ const HostAssigned = () => {
         })
     }
 
-    // status accepted
+    // status rejected
     const handleRejected = book => {
         axiosSecure.patch(`/bookings/host/${book._id}`)
         .then(res => {

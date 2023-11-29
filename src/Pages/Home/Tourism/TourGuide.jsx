@@ -33,7 +33,7 @@ const TourGuide = () => {
                                     <div className="flex items-center gap-3">
                                         <div className="avatar">
                                             <div className="mask w-24 h-24">
-                                                <img src={guide.img} alt="Avatar Tailwind CSS Component" />
+                                                <img src={guide.image} alt="Avatar Tailwind CSS Component" />
                                             </div>
                                         </div>
                                     </div>

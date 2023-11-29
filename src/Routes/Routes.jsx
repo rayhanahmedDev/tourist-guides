@@ -21,6 +21,10 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
 import HostAssigned from "../Pages/Dashboard/HostAssigned/HostAssigned";
 import HostRoute from "../Provider/HostRoute";
 import HostHome from "../Pages/Dashboard/HostHome/HostHome";
+import AdminRoute from "../Provider/AdminRoute";
+import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
+import AddPackage from "../Pages/Dashboard/AddPackage/AddPackage";
+import ManageUsers from "../Pages/Dashboard/ManageUsers/ManageUsers";
 
 const router = createBrowserRouter([
     {
@@ -102,7 +106,21 @@ const router = createBrowserRouter([
             },
             {
                 path: 'myProfile',
-                element :<HostHome></HostHome>
+                element :<HostRoute><HostHome></HostHome></HostRoute>
+            },
+
+            // admin panel
+            {
+                path : 'adminHome',
+                element : <AdminRoute><AdminHome></AdminHome></AdminRoute>
+            },
+            {
+                path: 'addPackage',
+                element : <AdminRoute><AddPackage></AddPackage></AdminRoute>
+            },
+            {
+                path : 'manageUsers',
+                element : <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
             }
         ]
     }
