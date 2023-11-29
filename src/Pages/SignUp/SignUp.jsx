@@ -54,12 +54,24 @@ const SignUp = () => {
         googleLogin()
             .then(result => {
                 console.log(result.user);
-                Swal.fire({
-                    title: "Sign Up Successful",
-                    text: "You clicked the button!",
-                    icon: "success"
-                });
-                navigate('/login')
+                const userInfo = {
+                    name : result.user.displayName,
+                    email : result.user.email,
+                    role: "tourist"
+                }
+                axiosPublic.post('/signUpUser', userInfo)
+                        .then(res => {
+                            if (res.data.insertedId) {
+                                reset()
+                                Swal.fire({
+                                    title: "Sign Up Successful",
+                                    text: "You clicked the button!",
+                                    icon: "success"
+                                });
+                                navigate('/login')
+                            }
+                        })
+                
             })
             .catch(error => {
                 console.log(error);

@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import './NavBer.css'
 import ButtonTitle from "../../../Component/ButtonTitle";
+import logo from '../../../assets/brand-home-removebg-preview.png'
 
 const NavBer = () => {
 
@@ -23,7 +24,7 @@ const NavBer = () => {
 
     return (
         <div>
-            <div className="navbar bg-[#FFFFFF] shadow md:px-20">
+            <div className="navbar bg-[#FFFFFF] shadow md:px-20 py-8">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -33,7 +34,10 @@ const NavBer = () => {
                             {links}
                         </ul>
                     </div>
-                    <img className="h-24" src="https://i.ibb.co/smt42VN/logo2.png" alt="" />
+                    <div className="item md:block hidden">
+                    <img className="h-18" src={logo} alt="" />
+                    <h2 className="text-xl font-bold">Discover Bangladesh</h2>
+                    </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu-horizontal px-1">

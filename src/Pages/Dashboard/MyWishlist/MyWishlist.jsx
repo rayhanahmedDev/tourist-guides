@@ -72,7 +72,7 @@ const MyWishlist = () => {
                                     <div className="flex items-center gap-3">
                                         <div className="avatar">
                                             <div className="mask w-16 h-16">
-                                                <img src={wish.img} alt="Avatar Tailwind CSS Component" />
+                                                <img src={wish.image} alt="Avatar Tailwind CSS Component" />
                                             </div>
                                         </div>
                                     </div>

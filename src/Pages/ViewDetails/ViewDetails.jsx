@@ -6,7 +6,7 @@ import BookedNow from "../../Component/BookedNow";
 
 
 const ViewDetails = () => {
-    const {img,tourType} = useLoaderData()
+    const {image,tourType} = useLoaderData()
     return (
         <div className="max-w-[1400px] mx-auto mt-16">
             <div className="md:mx-72 grid grid-cols-1 md:grid-cols-2">
@@ -14,7 +14,7 @@ const ViewDetails = () => {
                     viewData.map(view => <ViewPackage key={view._id} view={view}></ViewPackage>)
                 } */}
                  <div>
-                <img className="w-[400px] h-[300px] pb-3" src={img} alt="" />
+                <img className="w-[400px] h-[300px] pb-3" src={image} alt="" />
             </div>
             </div>
             <div>

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 
 const TourTypeCard = ({tourCard}) => {
-    const {_id, img, tourType, tripTitle, price} = tourCard;
+    const {_id, image, tourType, tripTitle, price} = tourCard;
     const {user} = useAuth()
 
 
@@ -15,7 +15,7 @@ const TourTypeCard = ({tourCard}) => {
         if(user && user.email){
             const packageItem = {
                 email : user.email,
-                img,
+                image,
                 tourType,
                 tripTitle,
                 price
@@ -39,7 +39,7 @@ const TourTypeCard = ({tourCard}) => {
         <div>
             <div className="card mx-8 lg:mx-0 bg-base-100 shadow-xl cursor-pointer">
                 <div className="container hover:bg-black">
-                <figure><img className="h-[230px] image w-full" src={img} alt="Shoes" /></figure>
+                <figure><img className="h-[230px] image w-full" src={image} alt="Shoes" /></figure>
                 <div className="middle">
                 <button onClick={handlePackage}><FaHeart className="text-6xl text-[#FF0904]"></FaHeart></button>
                 </div>
