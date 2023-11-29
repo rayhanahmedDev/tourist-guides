@@ -7,14 +7,14 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
 const OurPackCard = ({data}) => {
-    const {_id, img, tourType, tripTitle, price } = data;
+    const {_id, image, tourType, tripTitle, price } = data;
     const {user} = useAuth()
 
     const handlePackage = () => {
         if(user && user.email){
             const packageItem = {
                 email : user.email,
-                img,
+                image,
                 tourType,
                 tripTitle,
                 price
@@ -39,7 +39,7 @@ const OurPackCard = ({data}) => {
         <div>
             <div className="card bg-base-100 shadow-xl cursor-pointer">
                 <div className="container hover:bg-black">
-                <figure><img className="h-[230px] image w-full" src={img} alt="Shoes" /></figure>
+                <figure><img className="h-[230px] image w-full" src={image} alt="Shoes" /></figure>
                 <div className="middle">
                 <button onClick={handlePackage}><FaHeart className="text-6xl text-[#FF0904]"></FaHeart></button>
                 </div>
