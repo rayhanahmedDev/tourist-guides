@@ -1,9 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { useState } from "react";
 
 
 const ManageUsers = () => {
     const axiosSecure = useAxiosSecure()
+    const [isTourGuideButtonDisabled, setTourGuideButtonDisabled] = useState(false);
+    const [isMakeAdminButtonDisabled, setMakeAdminButtonDisabled] = useState(false);
+    
     const { data: allUsers = [], refetch } = useQuery({
         queryKey: ['allUsers'],
         queryFn: async () => {
@@ -19,6 +23,7 @@ const ManageUsers = () => {
                 console.log(res.data);
                 if (res.data.modifiedCount > 0) {
                     refetch()
+                    setTourGuideButtonDisabled(true);
                 }
             })
     }
@@ -30,6 +35,7 @@ const ManageUsers = () => {
                 console.log(res.data);
                 if (res.data.modifiedCount > 0) {
                     refetch()
+                    setMakeAdminButtonDisabled(true);
                 }
             })
     }
@@ -57,12 +63,24 @@ const ManageUsers = () => {
                                     <td>{book.email}</td>
 
                                     <>
-                                    <td>
-                                    {book?.role === 'admin' ? 'Admin' : <button onClick={() => handleMakeAdmin(book)} className="btn btn-sm bg-gradient-to-r from-[#FF8938] to-[#F00] text-white">Make Admin</button>}
-                                </td>
-                                    <td>
-                                    {book?.role === 'host' ? 'Host' : <button onClick={() => handleMakeTourGuide(book)} className="btn btn-sm bg-gradient-to-r from-[#FF8938] to-[#F00] text-white">Make Tour Guide</button>}
-                                </td>
+                                        <td>
+                                            {book?.role === 'admin' ? 'Admin' :
+                                                <button
+                                                    onClick={() => handleMakeAdmin(book)}
+                                                    className="btn btn-sm bg-gradient-to-r from-[#FF8938] to-[#F00] text-white"
+                                                    disabled={book?.role === 'host' || isMakeAdminButtonDisabled}
+                                                >
+                                                    Make Admin
+                                                </button>
+                                            }
+                                        </td>
+                                        <td>
+                                            {book?.role === 'host' ? 'Host' :
+                                                <button onClick={() => handleMakeTourGuide(book)} className="btn btn-sm bg-gradient-to-r from-[#FF8938] to-[#F00] text-white" disabled={book?.role === 'admin' || isTourGuideButtonDisabled}>
+                                                    Make Tour Guide
+                                                </button>
+                                            }
+                                        </td>
                                     </>
                                 </tr>)
                             }

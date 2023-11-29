@@ -8,7 +8,10 @@ import { Link } from "react-router-dom";
 
 const OurPackCard = ({data}) => {
     const {_id, image, tourType, tripTitle, price,tourPlan,image2, image3, image4, des } = data;
-    const {user} = useAuth()
+    const {user, loading} = useAuth()
+    if(loading){
+        return <progress className="progress w-56"></progress>
+    }
 
     const handlePackage = () => {
         if(user && user.email){

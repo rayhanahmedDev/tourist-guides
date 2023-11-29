@@ -1,18 +1,16 @@
 import { useLoaderData } from "react-router-dom";
 import TourPlan from "../../Component/TourPlan";
-// import ViewPackage from "../../Component/ViewPackage";
-import TourGuide from "../Home/Tourism/TourGuide";
 import BookedNow from "../../Component/BookedNow";
+import TourGuide from "../Home/Tourism/TourGuide";
 
 
 const ViewDetails = () => {
     const { image, image2, image3, image4, tourType, des, tourPlan } = useLoaderData()
+
+   
     return (
         <div className="max-w-[1400px] mx-auto mt-16">
             <div className="md:mx-72 grid grid-cols-1 md:grid-cols-2">
-                {/* {
-                    viewData.map(view => <ViewPackage key={view._id} view={view}></ViewPackage>)
-                } */}
                 <img className="w-[400px] h-[300px] pb-3" src={image} alt="" />
                 <img className="w-[400px] h-[300px] pb-3" src={image2} alt="" />
                 <img className="w-[400px] h-[300px] pb-3" src={image3} alt="" />

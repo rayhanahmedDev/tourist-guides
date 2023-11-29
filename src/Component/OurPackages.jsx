@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 const OurPackages = () => {
 
     const [packages, setPackages] = useState([4])
-
     useEffect(() => {
         fetch('http://localhost:5000/packages')
         .then(res => res.json())
