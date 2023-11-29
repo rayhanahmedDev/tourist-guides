@@ -1,13 +1,14 @@
 import { useLoaderData } from "react-router-dom";
 import TourPlan from "../../Component/TourPlan";
 import BookedNow from "../../Component/BookedNow";
-import TourGuide from "../Home/Tourism/TourGuide";
+import GuideTwo from "../../Component/GuideTwo";
 
 
 const ViewDetails = () => {
     const { image, image2, image3, image4, tourType, des, tourPlan } = useLoaderData()
 
    
+
     return (
         <div className="max-w-[1400px] mx-auto mt-16">
             <div className="md:mx-72 grid grid-cols-1 md:grid-cols-2">
@@ -26,7 +27,7 @@ const ViewDetails = () => {
                 des={des}
                 >
                 </TourPlan>
-                <TourGuide></TourGuide>
+                <GuideTwo></GuideTwo>
                 <BookedNow tourType={tourType}></BookedNow>
             </div>
         </div>

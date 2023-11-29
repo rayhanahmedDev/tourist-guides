@@ -25,6 +25,7 @@ import AdminRoute from "../Provider/AdminRoute";
 import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
 import AddPackage from "../Pages/Dashboard/AddPackage/AddPackage";
 import ManageUsers from "../Pages/Dashboard/ManageUsers/ManageUsers";
+import GuideDetailTwo from "../Pages/GuideDetailTwo/GuideDetailTwo";
 
 
 const router = createBrowserRouter([
@@ -53,6 +54,11 @@ const router = createBrowserRouter([
             {
                 path : 'details/:id',
                 element : <PrivateRoute><GuideDetails></GuideDetails></PrivateRoute>,
+                loader : ({params}) => fetch(`http://localhost:5000/guides/${params.id}`)
+            },
+            {
+                path : '/viewPackage/:id/details/:id',
+                element : <PrivateRoute><GuideDetailTwo></GuideDetailTwo></PrivateRoute>,
                 loader : ({params}) => fetch(`http://localhost:5000/guides/${params.id}`)
             },
             {
