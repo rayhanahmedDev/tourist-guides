@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
 const OurPackCard = ({data}) => {
-    const {_id, image, tourType, tripTitle, price } = data;
+    const {_id, image, tourType, tripTitle, price,tourPlan,image2, image3, image4, des } = data;
     const {user} = useAuth()
 
     const handlePackage = () => {
@@ -17,7 +17,13 @@ const OurPackCard = ({data}) => {
                 image,
                 tourType,
                 tripTitle,
-                price
+                price,
+                tourPlan,
+                image2,
+                image3,
+                image4,
+                des,
+                _id
             }
             axios.post('http://localhost:5000/users', packageItem)
             .then(res => {

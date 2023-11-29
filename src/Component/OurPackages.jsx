@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const OurPackages = () => {
 
-    const [packages, setPackages] = useState([])
+    const [packages, setPackages] = useState([4])
 
     useEffect(() => {
         fetch('http://localhost:5000/packages')
@@ -17,7 +17,7 @@ const OurPackages = () => {
       <div className="my-12">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {
-                packages.map(data => <OurPackCard key={data._id} data={data}></OurPackCard>)
+                packages.slice(0,4).map(data => <OurPackCard key={data._id} data={data}></OurPackCard>)
             }
         </div>
         <div className="text-center mt-8">

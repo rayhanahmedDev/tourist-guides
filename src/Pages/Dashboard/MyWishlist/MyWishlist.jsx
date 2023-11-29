@@ -4,11 +4,12 @@ import { FaEye, FaTrash, } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAuth from "../../../Hooks/useAuth";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 
 const MyWishlist = () => {
 
-    const {user} = useAuth()
+    const { user } = useAuth()
     const axiosSecure = useAxiosSecure()
 
     const { data: wishlist = [], refetch } = useQuery({
@@ -33,8 +34,8 @@ const MyWishlist = () => {
             if (result.isConfirmed) {
                 const res = await axios.delete(`http://localhost:5000/users/${wish._id}`)
                 console.log(res.data);
-                
-                if(res.data.deletedCount > 0){
+
+                if (res.data.deletedCount > 0) {
                     refetch()
                     Swal.fire({
                         position: "top-end",
@@ -42,9 +43,9 @@ const MyWishlist = () => {
                         title: `${wish.tripTitle} has been deleted`,
                         showConfirmButton: false,
                         timer: 1500
-                      });
+                    });
                 }
-                
+
             }
         });
     }
@@ -57,7 +58,7 @@ const MyWishlist = () => {
                     <thead>
                         <tr className="uppercase">
                             <th>
-                             Picture
+                                Picture
                             </th>
                             <th>TourType</th>
                             <th>price</th>
@@ -84,7 +85,9 @@ const MyWishlist = () => {
                                     <p className="text-[16px]">${wish.price}</p>
                                 </td>
                                 <th>
-                                    <button><FaEye className="text-xl text-[#FF8938]"></FaEye></button>
+                                    <Link to={`/viewPackage/${wish._id}`}>
+                                        <button><FaEye className="text-xl text-[#FF8938]"></FaEye></button>
+                                    </Link>
                                 </th>
                                 <th>
                                     <button onClick={() => handleDeleteItem(wish)} className="text-xl "><FaTrash className="text-[#F00]"></FaTrash></button>

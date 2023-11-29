@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 
 const TourTypeCard = ({tourCard}) => {
-    const {_id, image, tourType, tripTitle, price} = tourCard;
+    const {_id, image, tourType, tripTitle, price, tourPlan,image2, image3, image4, des} = tourCard;
     const {user} = useAuth()
 
 
@@ -18,7 +18,13 @@ const TourTypeCard = ({tourCard}) => {
                 image,
                 tourType,
                 tripTitle,
-                price
+                price,
+                tourPlan,
+                image2,
+                image3,
+                image4,
+                des,
+                _id
             }
             axios.post('http://localhost:5000/users', packageItem)
             .then(res => {

@@ -10,7 +10,7 @@ const AllPackages = () => {
     return (
         <div>
             <NavBer></NavBer>
-            <div className='lg:max-w-[1400px] mx-auto'>
+            <div className='lg:max-w-[1400px] mx-auto mb-12'>
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mt-12">
                     {
                         loadData.map(dataLoad => <AllPackage key={dataLoad._id} dataLoad={dataLoad}></AllPackage>)
